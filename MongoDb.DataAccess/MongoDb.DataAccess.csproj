@@ -74,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionAttribute.cs" />
-    <Compile Include="DIAutoFac\MongoDataAccessModule.cs" />
+    <Compile Include="DI\MongoDataAccessModule.cs" />
     <Compile Include="Exceptions\MongoConcurrencyException.cs" />
     <Compile Include="Services\IdDef.cs" />
     <Compile Include="Services\IdService.cs" />

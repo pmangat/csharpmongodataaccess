@@ -1,6 +1,6 @@
 ﻿using System;
 using Autofac;
-using MongoDb.DataAccess.DIAutoFac;
+using MongoDb.DataAccess.DI;
 using MongoDb.DataAccess.Services;
 
 namespace MongoDb.DataAccess.Tests

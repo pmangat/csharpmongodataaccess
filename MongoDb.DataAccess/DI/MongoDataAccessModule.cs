@@ -2,7 +2,7 @@
 using Autofac;
 using MongoDb.DataAccess.Services;
 
-namespace MongoDb.DataAccess.DIAutoFac
+namespace MongoDb.DataAccess.DI
 {
     public class MongoDataAccessModule : Module
     {
