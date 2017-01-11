@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using System;
+using MongoDB.Driver;
 
 namespace MongoDb.DataAccess.Services
 {
@@ -6,11 +7,10 @@ namespace MongoDb.DataAccess.Services
     {
         public static string CoreDbName = "CoreDb";
         private readonly IMongoRepository<IdDef> idDefRepository;
-        private readonly IMongoDbContext mongoContext;
 
-        public IdService(IMongoDbContextFactory contextFactory)
+        public IdService(Func<string, IMongoDbContext> mongoDbContext)
         {
-            mongoContext = contextFactory.Create(CoreDbName);
+            var mongoContext = mongoDbContext(CoreDbName);
             idDefRepository = mongoContext.GetRepository<IdDef>();
         }
 

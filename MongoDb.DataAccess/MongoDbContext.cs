@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
-using Castle.Core.Internal;
 using MongoDB.Driver;
 using ValidationException = MongoDb.DataAccess.Exceptions.ValidationException;
 
@@ -39,7 +39,10 @@ namespace MongoDb.DataAccess
         private string ParseCollectionAttribute<T>()
         {
             MemberInfo info = typeof(T);
-            var collectionAttribute = info.GetAttribute<CollectionAttribute>();
+            //var collectionAttribute = info.GetAttribute<CollectionAttribute>();
+
+            var collectionAttribute =
+                (CollectionAttribute) Attribute.GetCustomAttribute(info, typeof(CollectionAttribute));
             if (collectionAttribute == null)
                 throw new ValidationException(new List<ValidationResult>
                 {

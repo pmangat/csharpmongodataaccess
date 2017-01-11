@@ -1,30 +1,30 @@
 ﻿using System;
-using Castle.Windsor;
-using MongoDb.DataAccess.DI;
+using Autofac;
+using MongoDb.DataAccess.DIAutoFac;
 using MongoDb.DataAccess.Services;
 
 namespace MongoDb.DataAccess.Tests
 {
     public abstract class TestBase : IDisposable
     {
-        protected readonly IWindsorContainer container = new WindsorContainer();
-        private IMongoDbContextFactory mongoContextFactory;
+        protected IContainer container;
         protected IMongoDbContext mongoCoreDbContext;
         protected IMongoDbContext mongoTestDbContext;
 
         public void Dispose()
         {
-            mongoContextFactory.Release(mongoTestDbContext);
+            container.Dispose();
         }
 
         protected void Init()
         {
-            container.Install(new MongoDataAccessInstaller());
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(new MongoDataAccessModule());
+            container = builder.Build();
 
-            mongoContextFactory = container.Resolve<IMongoDbContextFactory>();
-
-            mongoTestDbContext = mongoContextFactory.Create("TestDb");
-            mongoCoreDbContext = mongoContextFactory.Create(IdService.CoreDbName);
+            mongoTestDbContext = container.Resolve<IMongoDbContext>(new NamedParameter("mongoDbName", "TestDb"));
+            mongoCoreDbContext =
+                container.Resolve<IMongoDbContext>(new NamedParameter("mongoDbName", IdService.CoreDbName));
         }
     }
 }
