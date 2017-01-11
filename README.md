@@ -7,4 +7,4 @@ An entity represents the document structure in Mongo - such entities can be mark
 
 When writes happen there could be a temporary unavailability of the primary due to fail over. So a retry mechanism is build in using Endjin.Retry package with a custom retry policy and strategy.
 
-Optimistic concurrency is supported in the 'Upsert' document methods - we use the Mongo C# driver ReplaceOne / ReplaceOneAsync methods. The first argument is a query to see if the document exists - if the incoming document as a older timestamp the query will return no rows and ReplaceOne will try and insert. This would fail as document with 'Id' already exists - this means the document passed in is outdated and needs refresh. 
+Optimistic concurrency is supported in the 'Upsert' document methods - we use the Mongo C# driver ReplaceOne / ReplaceOneAsync methods. The first argument is a query to see if the document exists - if the incoming document has an older timestamp the query will return no rows and ReplaceOne will try and insert. This would fail as document with 'Id' already exists - this means the document passed in is outdated and needs refresh. 
