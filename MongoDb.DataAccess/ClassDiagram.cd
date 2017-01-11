@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MongoDb.DataAccess.Exceptions.MongoDataAccessException">
+    <Position X="8.25" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MongoDataAccessException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDb.DataAccess.Exceptions.ValidationException">
+    <Position X="8.25" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\ValidationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDb.DataAccess.EntityBase">
+    <Position X="2.5" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>EntityBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDb.DataAccess.Exceptions.MongoConcurrencyException">
+    <Position X="11.25" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MongoConcurrencyException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MongoDb.DataAccess.CollectionAttribute">
+    <Position X="11.25" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CollectionAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MongoDb.DataAccess.IMongoDbContext">
+    <Position X="2.75" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMongoDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDb.DataAccess.IMongoDbContextFactory">
+    <Position X="5.25" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAABAAAAA=</HashCode>
+      <FileName>IMongoDbContextFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDb.DataAccess.IMongoRepository&lt;T&gt;">
+    <Position X="5.25" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAACAAAAAEgAAAIAABADAEIAQgAAAEgCBAAAIA=</HashCode>
+      <FileName>IMongoRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDb.DataAccess.IMongoDbInternalContext">
+    <Position X="2.75" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>IMongoDbInternalContext.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MongoDb.DataAccess.IMongoConnection">
+    <Position X="5.25" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMongoConnection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
